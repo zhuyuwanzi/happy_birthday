@@ -252,22 +252,21 @@
             document.getElementById("mazeContainer").style.display = "flex";
             drawMaze();
         }
-	let hueOffset = 0;
+
         function drawMaze() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let row = 0; row < 142; row++) {
                 for (let col = 0; col < 142; col++) {
                     if (maze[row][col] === 1) {
-                        //let hue = ((row + col) / (142 * 2)) * 360; // 根据列数映射到 0-360 的色相
-                	//ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+                        let hue = ((row + col) / (142 * 2)) * 360; // 根据列数映射到 0-360 的色相
+                	ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
 			//ctx.fillStyle = "#000000";
-			let hue = ((row + col) / (142 * 2)) * 360 + hueOffset;
-			ctx.fillStyle = `hsl(${hue % 360}, 100%, 50%)`;
+
                         ctx.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
                     }
                 }
             }
-	    hueOffset += 1;
+
 	    requestAnimationFrame(drawMaze);
             ctx.fillStyle = "blue";
             ctx.fillRect(player.x * tileSize, player.y * tileSize, tileSize * 2, tileSize * 2);
@@ -315,12 +314,12 @@
 	    document.getElementById("surpriseBtn").style.display = "none";  
 
 	    document.getElementById("birthdayMessage").style.display = "block";  // 显示祝福文字
-            document.querySelector(".hint").innerHTML = "祝你每天和阿竹在一起都快快乐乐的ovO<br>吃好多好吃的美食然后喝好多好喝的奶茶！<br>然后体重就可以加加！心情也好好Ovo<br>哦对了还要祝你有一二三四五篇顶刊！<br>总而言之生日快乐！阿竹爱你哦！";
+            document.querySelector(".hint").innerHTML = "祝你每天和阿竹在一起都快快乐乐的ovO<br>吃好多好吃的美食然后喝好多好喝的奶茶！<br>然后体重就可以加加！心情也好好Ovo<br>总而言之生日快乐！阿竹爱你哦！";
    	    const smallText = document.createElement("p");
    	    smallText.innerText = "ps: 记得戴上耳机哦qwq";
     	    smallText.style.fontSize = "14px";
-   	    smallText.style.color = "#666";  // 可根据需求调整颜色
- 	    document.querySelector(".hint").appendChild(smallText); // 将小字添加到hint容器
+   	    smallText.style.color = "#666";  
+ 	    document.querySelector(".hint").appendChild(smallText); 
 
 
 
