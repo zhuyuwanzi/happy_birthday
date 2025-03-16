@@ -243,7 +243,8 @@
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]] ;
         const tileSize = 2;
         let player = { x: 0, y:  2};
-        let goal = { x: 140, y: 138 };
+        // let goal = { x: 140, y: 138 };
+	let goal = { x: 1, y: 2 };
 
 
 
@@ -318,8 +319,8 @@
    	    const smallText = document.createElement("p");
    	    smallText.innerText = "ps: 记得戴上耳机哦qwq";
     	    smallText.style.fontSize = "14px";
-   	    smallText.style.color = "#666";  
- 	    document.querySelector(".hint").appendChild(smallText); 
+   	    smallText.style.color = "#666";  // 可根据需求调整颜色
+ 	    document.querySelector(".hint").appendChild(smallText); // 将小字添加到hint容器
 
 
 
